@@ -1,0 +1,654 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة طاقتك | Taqatak - EcoSmart Egypt (SDG 7 & 13)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts - Cairo & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        accent: {
+                            500: '#0284c7',
+                            600: '#0369a1',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-gradient-to-tr from-brand-600 to-emerald-400 text-white p-3 rounded-2xl shadow-lg shadow-brand-500/20">
+                    <i class="fa-solid fa-solar-panel text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold tracking-tight text-slate-900 leading-none">منصة طاقتك <span class="text-brand-600 text-sm font-semibold tracking-normal">Taqatak</span></h1>
+                    <p class="text-xs text-slate-500 mt-1 font-medium">التحول المستدام للطاقة النظيفة في مصر (SDG 7 & 13)</p>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
+                <a href="#calculator" class="hover:text-brand-600 transition">حاسبة الطاقة الشمسية</a>
+                <a href="#shems" class="hover:text-brand-600 transition">مستشار الاستهلاك الذكي</a>
+                <a href="#finance" class="hover:text-brand-600 transition">تمويل الطاقة</a>
+                <a href="#about" class="hover:text-brand-600 transition">عن المشروعات والبحوث</a>
+            </div>
+
+            <a href="#calculator" class="bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-xl font-bold shadow-md shadow-brand-600/20 transition flex items-center gap-2 text-sm">
+                <i class="fa-solid fa-calculator"></i>
+                <span>احسب وفرك الآن</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white py-16 lg:py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-right">
+                    <div class="inline-flex items-center gap-2 bg-brand-500/10 border border-brand-500/30 text-brand-400 px-4 py-1.5 rounded-full text-xs font-bold">
+                        <i class="fa-solid fa-leaf"></i>
+                        <span>مبادرة مصرية للتحول إلى الطاقة النظيفة والتنمية المستدامة</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-black text-white leading-tight">
+                        طاقة نظيفة، اقتصاد مستدام، وفر حقيقي لفاتورتك
+                    </h2>
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+                        تعتمد مصر على الوقود الأحفوري بنسبة تتجاوز 90% لتوليد الكهرباء. تهدف منصة <b>"طاقتك"</b> لتمكين المستهلكين والأسر المصرية من خفض شرائح الاستهلاك والانتقال المتدرج للطاقة الشمسية عبر تحليلات ذكية وحلول تمويل ميسرة.
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#calculator" class="bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-8 py-3.5 rounded-xl text-base transition shadow-lg shadow-brand-500/25">
+                            تجربة حاسبة الجدوى
+                        </a>
+                        <a href="#shems" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-3.5 rounded-xl text-base transition">
+                            نظام SHEMS للإدارة الذكية
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Live Quick Stats -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card rounded-3xl p-6 lg:p-8 text-slate-800 space-y-6 shadow-2xl relative">
+                        <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3 flex items-center justify-between">
+                            <span>مؤشرات الطاقة في مصر</span>
+                            <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-md">SDG 7 & 13</span>
+                        </h3>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                                <span class="text-xs text-slate-500 font-semibold block">اعتماد على الأحفوري</span>
+                                <span class="text-2xl font-black text-amber-600 mt-1 block">90%</span>
+                                <span class="text-[11px] text-slate-400">غاز طبيعي ومازوت</span>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                                <span class="text-xs text-slate-500 font-semibold block">انبعاثات قطاع الطاقة</span>
+                                <span class="text-2xl font-black text-rose-600 mt-1 block">64.5%</span>
+                                <span class="text-[11px] text-slate-400">من إجمالي الانبعاثات</span>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                                <span class="text-xs text-slate-500 font-semibold block">هدف المستهدف 2035</span>
+                                <span class="text-2xl font-black text-brand-600 mt-1 block">42%</span>
+                                <span class="text-[11px] text-slate-400">طاقة متجددة</span>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                                <span class="text-xs text-slate-500 font-semibold block">معدل سطوع الشمس</span>
+                                <span class="text-2xl font-black text-sky-600 mt-1 block">3200</span>
+                                <span class="text-[11px] text-slate-400">ساعة/سنة في مصر</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-brand-50 border border-brand-200 p-4 rounded-2xl text-xs text-brand-900 flex items-start gap-3">
+                            <i class="fa-solid fa-circle-info text-brand-600 text-base mt-0.5"></i>
+                            <span>أظهرت الدراسات الأكاديمية الوطنية أن الإدارة الذكية للأنظمة المنزلية تخفض الاستهلاك بنسبة تصل إلى 25% دون استثمارات ضخمة.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Features / Section 1: Solar Advanced Calculator -->
+    <section id="calculator" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-600 text-sm font-bold tracking-wider uppercase">الأداة التفاعلية الأولى</span>
+                <h2 class="text-3xl font-black text-slate-900 mt-2">حاسبة الجدوى الاقتصادية المتطورة للطاقة الشمسية</h2>
+                <p class="text-slate-600 mt-3 text-base">قم بإدخال بيانات فاتورة الكهرباء المنزلية أو التجارية لحساب القدرة المطلوبة، التكلفة التقديرية، فترة استرداد الاستثمار، وخفض الانبعاثات الكربونية.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Controls Form -->
+                <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200 space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">نوع الاستهلاك الكهربائي</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button type="button" onclick="setSector('residential')" id="btn-res" class="py-3 px-4 rounded-xl border-2 border-brand-600 bg-brand-50 text-brand-700 font-bold text-sm flex items-center justify-center gap-2 transition">
+                                <i class="fa-solid fa-house"></i>
+                                <span>سكني (منازل)</span>
+                            </button>
+                            <button type="button" onclick="setSector('commercial')" id="btn-com" class="py-3 px-4 rounded-xl border-2 border-slate-200 bg-white text-slate-600 font-semibold text-sm flex items-center justify-center gap-2 transition">
+                                <i class="fa-solid fa-store"></i>
+                                <span>تجاري / شركـات</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="monthlyBill" class="block text-sm font-bold text-slate-700 mb-2">
+                            متوسط قيمة فاتورة الكهرباء الشهرية (بالجنيه المصري)
+                        </label>
+                        <div class="relative">
+                            <input type="number" id="monthlyBill" value="1200" min="100" step="50" oninput="calculateSolarROI()" class="w-full bg-slate-50 border border-slate-300 focus:border-brand-500 focus:bg-white rounded-xl py-3 px-4 text-slate-900 font-bold text-lg focus:outline-none transition pl-16">
+                            <span class="absolute left-4 top-3.5 text-xs font-bold text-slate-400">ج.م / شهر</span>
+                        </div>
+                        <span class="text-xs text-slate-400 mt-1 block">يتم الحساب تلقائياً وفقاً للشرائح التصاعدية الحالية IBR Tariffs</span>
+                    </div>
+
+                    <div>
+                        <label for="sunHours" class="block text-sm font-bold text-slate-700 mb-2">
+                            متوسط ساعات الذروة الشمسية بالموقع: <span id="sunHoursVal" class="text-brand-600 font-bold">5.5</span> ساعة/يوم
+                        </label>
+                        <input type="range" id="sunHours" min="4" max="7" step="0.1" value="5.5" oninput="document.getElementById('sunHoursVal').innerText=this.value; calculateSolarROI();" class="w-full accent-brand-600 cursor-pointer">
+                    </div>
+
+                    <div class="p-4 bg-amber-50 border border-amber-200 rounded-2xl text-xs text-amber-900 flex items-start gap-3">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-600 text-sm mt-0.5"></i>
+                        <p>تستند الحسابات التقديرية على متوسط أسعار السوق المصري (سعر الكيلوواط شمس تجميعي وسعر الألواح والانفرتر) مع احتساب معدل تضخم سنوي للكهرباء بنسبة 12%.</p>
+                    </div>
+                </div>
+
+                <!-- Results Display -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200 space-y-6">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                                <i class="fa-solid fa-chart-pie text-brand-600"></i>
+                                <span>نتائج التحليل والجدوى الاقتصادية</span>
+                            </h3>
+                            <span class="text-xs font-bold bg-brand-100 text-brand-800 px-3 py-1 rounded-full">محاكاة فورية</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                                <span class="text-xs font-semibold text-slate-500 block">قدرة المنظومة الموصى بها</span>
+                                <span id="sysCapacity" class="text-2xl font-black text-slate-900 mt-1 block">4.2 <span class="text-sm font-normal text-slate-500">كيلوواط</span></span>
+                            </div>
+
+                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                                <span class="text-xs font-semibold text-slate-500 block">التكلفة التقديرية للتركيب</span>
+                                <span id="sysCost" class="text-2xl font-black text-brand-600 mt-1 block">147,000 <span class="text-sm font-normal text-slate-500">ج.م</span></span>
+                            </div>
+
+                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                                <span class="text-xs font-semibold text-slate-500 block">فترة استرداد رأس المال</span>
+                                <span id="paybackPeriod" class="text-2xl font-black text-sky-600 mt-1 block">4.8 <span class="text-sm font-normal text-slate-500">سنوات</span></span>
+                            </div>
+                        </div>
+
+                        <!-- Environmental & Financial Details -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-100 flex items-center gap-4">
+                                <div class="bg-emerald-500 text-white p-3 rounded-xl">
+                                    <i class="fa-solid fa-leaf text-xl"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-bold text-emerald-800 block">الوفر في انبعاثات الكربون</span>
+                                    <span id="co2Saved" class="text-lg font-black text-emerald-900">3.8 طن CO2 سنوياً</span>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bg-blue-50 rounded-2xl border border-blue-100 flex items-center gap-4">
+                                <div class="bg-blue-600 text-white p-3 rounded-xl">
+                                    <i class="fa-solid fa-piggy-bank text-xl"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-bold text-blue-800 block">الوفر التراكمي (خلال 20 سنة)</span>
+                                    <span id="totalSavings20" class="text-lg font-black text-blue-900">420,000 ج.م</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart Container -->
+                        <div class="pt-4">
+                            <span class="text-xs font-bold text-slate-500 block mb-3">مقارنة التكاليف التراكمية عبر 10 سنوات (بدون شمس vs مع شمس)</span>
+                            <div class="h-64 w-full">
+                                <canvas id="roiChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: SHEMS Smart Home Energy Management System -->
+    <section id="shems" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-sky-600 text-sm font-bold tracking-wider uppercase">حل بدون تكلفة مبدئية مرتفعة</span>
+                <h2 class="text-3xl font-black text-slate-900 mt-2">مستشار أنظمة إدارة الطاقة الذكية (SHEMS)</h2>
+                <p class="text-slate-600 mt-3 text-base">احسب أثر تشغيل الأجهزة المنزلية وحدد أحمال الذروة لتجنب الانتقال للشريحة الأعلى في فاتورة الكهرباء المصرية.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Appliance Selection -->
+                <div class="lg:col-span-7 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 space-y-4">
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-plug text-sky-600"></i>
+                        <span>قائمة الأجهزة الأكبر استهلاكاً للمنازل</span>
+                    </h3>
+
+                    <div id="appliancesList" class="space-y-3">
+                        <!-- Appliance Items will be generated here -->
+                    </div>
+                </div>
+
+                <!-- SHEMS Smart Advice Output -->
+                <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-slate-800 text-white p-6 sm:p-8 rounded-3xl shadow-xl space-y-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-slate-700 pb-4 mb-4">
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-lightbulb text-amber-400"></i>
+                                <span>تقرير الاستهلاك والجدولة الذكية</span>
+                            </h3>
+                            <span class="text-xs bg-sky-500/20 text-sky-300 px-2.5 py-1 rounded-md font-semibold">تحليل الأحمال</span>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <span class="text-xs text-slate-400 block font-semibold">الاستهلاك الشهري المتوقع للأجهزة المختارة</span>
+                                <span id="totalKwhShems" class="text-3xl font-black text-amber-400 mt-1 block">340 <span class="text-sm font-normal text-slate-300">كيلوواط/ساعة</span></span>
+                            </div>
+
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <span class="text-xs text-slate-400 block font-semibold">الشريحة الكهربائية المتوقعة</span>
+                                <span id="bracketShems" class="text-xl font-bold text-emerald-400 mt-1 block">الشريحة الرابعة (من 201 إلى 350 ك.و)</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <span class="text-xs font-bold text-slate-300 block">توصيات مخصصة لتقليل الفاتورة (SHEMS Rules):</span>
+                                <ul id="shemsRecommendations" class="text-xs text-slate-300 space-y-2 list-disc list-inside">
+                                    <li>قم بتشغيل الغسالة والسخان خارج أوقات الذروة (من 6 مساءً إلى 10 مساءً).</li>
+                                    <li>ضبط تكييف الهواء على درجة 25 مئوية يوفر ما يقارب 18% من استهلاك التكييف.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-700/60">
+                        <div class="flex items-center justify-between text-xs text-slate-400">
+                            <span>الوفر المالي المتوقع بالجدولة الذكية:</span>
+                            <span id="shemsSavings" class="text-base font-bold text-emerald-400">حوالي 15% - 25% شهرياً</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Green Financing & Solutions in Egypt -->
+    <section id="finance" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-emerald-600 text-sm font-bold tracking-wider uppercase">تجاوز عقبة التكلفة المبدئية (CAPEX)</span>
+                <h2 class="text-3xl font-black text-slate-900 mt-2">خريطة التمويل الأخضر والتسهيلات في مصر</h2>
+                <p class="text-slate-600 mt-3 text-base">استعراض المبادرات الوطنية والتمويلات الميسرة المتاحة في السوق المصري لمساعدة المنازل والشركات على تركيب أنظمة الطاقة الشمسية.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Option 1 -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">القروض الخضراء البنكية</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        توفر البنوك المصرية (مثل البنك الأهلي وبنك مصر) برامج تمويل متخصصة للأنظمة الشمسية بفترات سداد تصل إلى 5-7 سنوات وبفائدة ميسرة.
+                    </p>
+                    <div class="pt-2">
+                        <span class="inline-block bg-slate-100 text-slate-700 text-[11px] font-bold px-3 py-1 rounded-md">تمويل يصل لـ 80% من التكلفة</span>
+                    </div>
+                </div>
+
+                <!-- Option 2 -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-sky-100 text-sky-700 rounded-2xl flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">عقود شراء الطاقة (PPA)</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        نموذج يتيح للشركات والمصانع الترتيب مع شركة مطورة لتركيب محطة شمسية بدون تكلفة مبدئية، مقابل شراء الكهرباء بسعر أقل من التعريفة الحكومية.
+                    </p>
+                    <div class="pt-2">
+                        <span class="inline-block bg-slate-100 text-slate-700 text-[11px] font-bold px-3 py-1 rounded-md">صفر تكلفة مبدئية (Zero CAPEX)</span>
+                    </div>
+                </div>
+
+                <!-- Option 3 -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">الجمعيات والمجموعات الشمسية</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        نماذج الشراء الجماعي في المجمعات السكنية (الكمبوندات) أو القرى الريفية للحصول على خصومات تجميعية وتخفيض تكاليف التركيب والصيانة.
+                    </p>
+                    <div class="pt-2">
+                        <span class="inline-block bg-slate-100 text-slate-700 text-[11px] font-bold px-3 py-1 rounded-md">توفير 15% عبر الشراء التجميعي</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Academic Foundation & Research Summary -->
+    <section id="about" class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-4">
+                    <span class="text-brand-600 text-sm font-bold tracking-wider uppercase">الملخص الأكاديمي والبحثي</span>
+                    <h2 class="text-3xl font-black text-slate-900">الأسس العلمية لمشروع التنمية المستدامة</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        تم تطوير هذا التطبيق استناداً إلى مراجعة شاملة لـ 10 أبحاث ودراسات علمية موثقة (مثل Abdelmeguid & Ibrahiem, 2025; Abouaiana & Battisti, 2025). تناولت الأبحاث تحليل عقبات التحول للطاقة النظيفة في مصر واقترحت حلول إدارة الطلب (Demand-Side Management) والمجموعات الشمسية وتحديث استراتيجية ISES 2035.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+                        <span class="bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">الهدف 7: طاقة نظيفة بأسعار معقولة</span>
+                        <span class="bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">الهدف 13: العمل المناخي</span>
+                        <span class="bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">جامعة العلمين الدولية (AIU)</span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 bg-slate-50 p-6 rounded-3xl border border-slate-200 space-y-3">
+                    <h3 class="font-bold text-slate-900 border-b border-slate-200 pb-2">فريق عمل المشروع (Group Work Tasks)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <div class="bg-white p-3 rounded-xl border border-slate-100">
+                            <span class="font-bold block text-slate-800">1. Research & Analysis</span>
+                            <span class="text-slate-500">مراجعة الدراسات والمراجع 10</span>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-slate-100">
+                            <span class="font-bold block text-slate-800">2. Content Development</span>
+                            <span class="text-slate-500">صياغة محتوى واستراتيجية الحل</span>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-slate-100">
+                            <span class="font-bold block text-slate-800">3. Deploying AI tools</span>
+                            <span class="text-slate-500">البرمجة والتطوير الذكي</span>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-slate-100">
+                            <span class="font-bold block text-slate-800">4. Digital Publishing</span>
+                            <span class="text-slate-500">النشر الرقمي على LinkedIn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-leaf text-brand-500 text-lg"></i>
+                <span class="font-bold">منصة طاقتك (Taqatak) - EcoSmart Egypt</span>
+            </div>
+            <p class="text-slate-400">مشروع مقرر الاستدامة والتنمية المستدامة (GEO217) - جامعة العلمين الدولية</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // App State
+        let currentSector = 'residential';
+        let roiChartInstance = null;
+
+        const appliances = [
+            { id: 'ac', name: 'تكييف قدرة 1.5 حصان', watts: 1200, hours: 6, icon: 'fa-snowflake' },
+            { id: 'heater', name: 'سخان مائي كهربائي', watts: 1500, hours: 2, icon: 'fa-fire-burner' },
+            { id: 'fridge', name: 'ثلاجة منزلية (24 ساعة)', watts: 180, hours: 24, icon: 'fa-box' },
+            { id: 'washer', name: 'غسالة ملابس', watts: 500, hours: 1, icon: 'fa-soap' },
+            { id: 'tv', name: 'شاشات ورسيفر وإضاءة', watts: 250, hours: 7, icon: 'fa-tv' }
+        ];
+
+        // Init functions on load
+        window.onload = function() {
+            renderAppliances();
+            calculateSolarROI();
+            updateShemsAnalysis();
+        };
+
+        function setSector(sector) {
+            currentSector = sector;
+            const resBtn = document.getElementById('btn-res');
+            const comBtn = document.getElementById('btn-com');
+            
+            if (sector === 'residential') {
+                resBtn.className = 'py-3 px-4 rounded-xl border-2 border-brand-600 bg-brand-50 text-brand-700 font-bold text-sm flex items-center justify-center gap-2 transition';
+                comBtn.className = 'py-3 px-4 rounded-xl border-2 border-slate-200 bg-white text-slate-600 font-semibold text-sm flex items-center justify-center gap-2 transition';
+            } else {
+                comBtn.className = 'py-3 px-4 rounded-xl border-2 border-brand-600 bg-brand-50 text-brand-700 font-bold text-sm flex items-center justify-center gap-2 transition';
+                resBtn.className = 'py-3 px-4 rounded-xl border-2 border-slate-200 bg-white text-slate-600 font-semibold text-sm flex items-center justify-center gap-2 transition';
+            }
+            calculateSolarROI();
+        }
+
+        function calculateSolarROI() {
+            const bill = parseFloat(document.getElementById('monthlyBill').value) || 0;
+            const sunHours = parseFloat(document.getElementById('sunHours').value) || 5.5;
+
+            // Approximate tariff calculation in EGP/kWh based on Egyptian residential tiers
+            let avgPricePerKwh = 1.45;
+            if (bill > 2000) avgPricePerKwh = 2.14;
+            else if (bill > 1000) avgPricePerKwh = 1.75;
+
+            // Monthly kWh estimated
+            const monthlyKwh = bill / avgPricePerKwh;
+            const dailyKwh = monthlyKwh / 30;
+
+            // Solar capacity needed (kWp) with 20% system losses factor
+            const requiredCapacity = (dailyKwh / sunHours) * 1.25;
+
+            // Estimated Cost in EGP (Avg 35,000 EGP per kW installed turnkey in Egypt market)
+            const systemCost = requiredCapacity * 35000;
+
+            // Yearly savings
+            const yearlySavings = bill * 12 * 0.85; // assuming 85% offset
+
+            // Simple Payback Period
+            const paybackYears = systemCost / (yearlySavings > 0 ? yearlySavings : 1);
+
+            // CO2 reduction (approx 0.52 kg CO2 per kWh in Egypt fossil mix)
+            const yearlyCo2Tons = (monthlyKwh * 12 * 0.52) / 1000;
+
+            // 20-Year total net savings
+            const totalSavings = (yearlySavings * 20) - systemCost;
+
+            // Update DOM
+            document.getElementById('sysCapacity').innerHTML = `${requiredCapacity.toFixed(1)} <span class="text-sm font-normal text-slate-500">كيلوواط</span>`;
+            document.getElementById('sysCost').innerHTML = `${Math.round(systemCost).toLocaleString()} <span class="text-sm font-normal text-slate-500">ج.م</span>`;
+            document.getElementById('paybackPeriod').innerHTML = `${paybackYears.toFixed(1)} <span class="text-sm font-normal text-slate-500">سنوات</span>`;
+            document.getElementById('co2Saved').innerText = `${yearlyCo2Tons.toFixed(1)} طن CO2 سنوياً`;
+            document.getElementById('totalSavings20').innerText = `${Math.round(totalSavings).toLocaleString()} ج.م`;
+
+            // Render/Update Chart
+            renderROIChart(systemCost, yearlySavings);
+        }
+
+        function renderROIChart(initialCost, annualSavings) {
+            const ctx = document.getElementById('roiChart').getContext('2d');
+
+            const labels = Array.from({length: 11}, (_, i) => `سنة ${i}`);
+            
+            // Cumulative Cost without Solar (assuming 10% annual tariff inflation)
+            let cumulativeGridCost = [0];
+            let currentAnnualBill = annualSavings / 0.85;
+            for(let i = 1; i <= 10; i++) {
+                cumulativeGridCost.push(cumulativeGridCost[i-1] + currentAnnualBill);
+                currentAnnualBill *= 1.10; // inflation
+            }
+
+            // Cumulative Cost with Solar (Initial CAPEX + minimal O&M)
+            let cumulativeSolarCost = [initialCost];
+            for(let i = 1; i <= 10; i++) {
+                cumulativeSolarCost.push(initialCost + (i * 2000)); // 2000 EGP/year maintenance
+            }
+
+            if (roiChartInstance) {
+                roiChartInstance.destroy();
+            }
+
+            roiChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'التكلفة التراكمية بدون طاقة شمسية (ج.م)',
+                            data: cumulativeGridCost,
+                            borderColor: '#e11d48',
+                            backgroundColor: 'rgba(225, 29, 72, 0.05)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.3
+                        },
+                        {
+                            label: 'التكلفة التراكمية مع المنظومة الشمسية (ج.م)',
+                            data: cumulativeSolarCost,
+                            borderColor: '#16a34a',
+                            backgroundColor: 'rgba(22, 163, 74, 0.05)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'top', labels: { font: { family: 'Cairo' } } }
+                    },
+                    scales: {
+                        y: {
+                            ticks: { font: { family: 'Cairo' } }
+                        },
+                        x: {
+                            ticks: { font: { family: 'Cairo' } }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Render Appliance Controls for SHEMS
+        function renderAppliances() {
+            const container = document.getElementById('appliancesList');
+            container.innerHTML = '';
+
+            appliances.forEach(app => {
+                const item = document.createElement('div');
+                item.className = 'bg-white p-4 rounded-2xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm';
+                item.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid ${app.icon}"></i>
+                        </div>
+                        <div>
+                            <span class="font-bold text-slate-800 text-sm block">${app.name}</span>
+                            <span class="text-xs text-slate-400">${app.watts} واط</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <label class="text-xs text-slate-500 font-semibold">ساعات التشغيل/يوم:</label>
+                        <input type="number" min="0" max="24" value="${app.hours}" onchange="updateApplianceHours('${app.id}', this.value)" class="w-16 bg-slate-50 border border-slate-300 rounded-lg py-1 px-2 text-center text-sm font-bold text-slate-800">
+                    </div>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function updateApplianceHours(id, newHours) {
+            const app = appliances.find(a => a.id === id);
+            if(app) {
+                app.hours = parseFloat(newHours) || 0;
+                updateShemsAnalysis();
+            }
+        }
+
+        function updateShemsAnalysis() {
+            let totalDailyKwh = 0;
+            appliances.forEach(app => {
+                totalDailyKwh += (app.watts * app.hours) / 1000;
+            });
+
+            const monthlyKwh = Math.round(totalDailyKwh * 30);
+            document.getElementById('totalKwhShems').innerHTML = `${monthlyKwh} <span class="text-sm font-normal text-slate-300">كيلوواط/ساعة</span>`;
+
+            // Bracket determination
+            let bracketText = "الشريحة الأولى (0-50 ك.و)";
+            if (monthlyKwh > 1000) bracketText = "الشريحة السابعة (أكثر من 1000 ك.و)";
+            else if (monthlyKwh > 650) bracketText = "الشريحة السادسة (من 651 إلى 1000 ك.و)";
+            else if (monthlyKwh > 350) bracketText = "الشريحة الخامسة (من 351 إلى 650 ك.و)";
+            else if (monthlyKwh > 200) bracketText = "الشريحة الرابعة (من 201 إلى 350 ك.و)";
+            else if (monthlyKwh > 100) bracketText = "الشريحة الثالثة (من 101 إلى 200 ك.و)";
+            else if (monthlyKwh > 50) bracketText = "الشريحة الثانية (من 51 إلى 100 ك.و)";
+
+            document.getElementById('bracketShems').innerText = bracketText;
+
+            // Dynamic recommendations
+            const recContainer = document.getElementById('shemsRecommendations');
+            recContainer.innerHTML = '';
+
+            const ac = appliances.find(a => a.id === 'ac');
+            const heater = appliances.find(a => a.id === 'heater');
+
+            if (ac && ac.hours > 4) {
+                recContainer.innerHTML += `<li>تقليل تشغيل التكييف بمعدل ساعة واحدة يقلل حوالي ${Math.round(ac.watts * 30 / 1000)} ك.و شهرياً.</li>`;
+            }
+            if (heater && heater.hours > 1) {
+                recContainer.innerHTML += `<li>تعديل درجة حرارة السخان إلى 60 درجة مئوية بدلاً من 80 يمنع الفقد الحراري المستمر.</li>`;
+            }
+            recContainer.innerHTML += `<li>جدولة تشغيل الأجهزة الكثيفة خارج أوقات الذروة يجنبك الانتقال للشرائح الأعلى.</li>`;
+        }
+    </script>
+</body>
+</html>
+```
